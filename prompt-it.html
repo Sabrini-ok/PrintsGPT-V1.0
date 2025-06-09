@@ -1,0 +1,706 @@
+<!DOCTYPE html><!--  Last Published: Mon Jun 09 2025 20:13:33 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="6835133cdd193d4600299fe9" data-wf-site="6820c4f7d9b8934078f1a9b9">
+<head>
+  <meta charset="utf-8">
+  <title>Prompt-it</title>
+  <meta content="Prompt-it" property="og:title">
+  <meta content="Prompt-it" property="twitter:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/prints-gpt-mvp.webflow.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic","Vollkorn:400,400italic,700,700italic","Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic","Bricolage Grotesque:200,300,regular,500,600,700,800"]  }});</script>
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.svg" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <style>
+body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+</style>
+  <style>
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  #path-selector {
+  display: flex ;
+  justify-content: center ; 
+  align-items: center ;  
+  gap: 16px;              
+}
+</style>
+</head>
+<body>
+  <div id="Banner" data-w-id="45824cf3-5854-44cb-935a-68d8318f070a" class="banner">
+    <div class="banner-wrap">
+      <div class="notice-text">You have 5 free credits to get your artwork on any product you like. <a href="#" class="white-link">Start free today.</a>
+      </div>
+    </div>
+  </div>
+  <div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" data-w-id="2f1f8ec3-de9c-c734-6329-b9188c9b352c" role="banner" data-duration="400" id="Navigation">
+    <div class="navigation-container">
+      <div class="navigation-left">
+        <a href="index.html" class="brand w-nav-brand"><img src="images/Isologo.svg" width="260" alt="PrintsGPT Iso Logo"></a>
+      </div>
+      <div class="navigation-right">
+        <div class="menu-button w-nav-button">
+          <div class="icon w-icon-nav-menu"></div>
+        </div>
+        <nav role="navigation" class="nav-menu w-nav-menu">
+          <a href="trending.html" class="nav-link w-nav-link">Trending</a>
+          <a href="catalog.html" class="nav-link w-nav-link">Catalog</a>
+          <a href="credit-purchase.html" class="nav-link w-nav-link">Pricing</a>
+          <div data-hover="true" data-delay="0" class="dropdown-nav w-dropdown">
+            <div class="dropdown-toggle w-dropdown-toggle">
+              <div class="nav-dropdown">My Profile</div>
+              <div class="credit-pill nav">
+                <div class="credit-text number">4</div>
+              </div>
+            </div>
+            <nav class="dropdown-list w-dropdown-list">
+              <a href="#" class="w-dropdown-link">Settings</a>
+              <a href="#" class="w-dropdown-link">Credits</a>
+              <a href="#" class="w-dropdown-link">Log out</a>
+            </nav>
+          </div>
+          <a href="prompt-it.html" aria-current="page" class="nav-link highlight w-nav-link w--current">Create New</a>
+        </nav>
+        <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightSidebar" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper">
+          <a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink cart-button w-inline-block" role="button" aria-haspopup="dialog" aria-label="Open cart"><svg class="w-commerce-commercecartopenlinkicon cart-icon" width="17px" height="17px" viewbox="0 0 17 17">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path d="M2.60592789,2 L0,2 L0,0 L4.39407211,0 L4.84288393,4 L16,4 L16,9.93844589 L3.76940945,12.3694378 L2.60592789,2 Z M15.5,17 C14.6715729,17 14,16.3284271 14,15.5 C14,14.6715729 14.6715729,14 15.5,14 C16.3284271,14 17,14.6715729 17,15.5 C17,16.3284271 16.3284271,17 15.5,17 Z M5.5,17 C4.67157288,17 4,16.3284271 4,15.5 C4,14.6715729 4.67157288,14 5.5,14 C6.32842712,14 7,14.6715729 7,15.5 C7,16.3284271 6.32842712,17 5.5,17 Z" fill="currentColor" fill-rule="nonzero"></path>
+              </g>
+            </svg>
+            <div class="w-commerce-commercecartopenlinkcount cart-quantity">0</div>
+          </a>
+          <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar">
+            <div data-node-type="commerce-cart-container" role="dialog" class="w-commerce-commercecartcontainer">
+              <div class="w-commerce-commercecartheader">
+                <h4 class="w-commerce-commercecartheading heading-h4">Your Order</h4>
+                <a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink w-inline-block" role="button" aria-label="Close cart"><svg width="16px" height="16px" viewbox="0 0 16 16">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g fill-rule="nonzero" fill="#333333">
+                        <polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon>
+                      </g>
+                    </g>
+                  </svg></a>
+              </div>
+              <div class="w-commerce-commercecartformwrapper">
+                <form data-node-type="commerce-cart-form" style="display:none" class="w-commerce-commercecartform">
+                  <script type="text/x-wf-template" id="wf-template-2f1f8ec3-de9c-c734-6329-b9188c9b354d"></script>
+                  <div class="w-commerce-commercecartlist" data-wf-collection="database.commerceOrder.userItems" data-wf-template-id="wf-template-2f1f8ec3-de9c-c734-6329-b9188c9b354d"></div>
+                  <div class="w-commerce-commercecartfooter">
+                    <div aria-live="" aria-atomic="false" class="w-commerce-commercecartlineitem cart-line-item">
+                      <div>Subtotal</div>
+                      <div class="w-commerce-commercecartordervalue text-block"></div>
+                    </div>
+                    <div>
+                      <div data-node-type="commerce-cart-quick-checkout-actions">
+                        <a role="button" aria-haspopup="dialog" aria-label="Apple Pay" data-node-type="commerce-cart-apple-pay-button" style="background-image:-webkit-named-image(apple-pay-logo-white);background-size:100% 50%;background-position:50% 50%;background-repeat:no-repeat" class="w-commerce-commercecartapplepaybutton apple-pay" tabindex="0">
+                          <div></div>
+                        </a>
+                        <a role="button" tabindex="0" aria-haspopup="dialog" data-node-type="commerce-cart-quick-checkout-button" style="display:none" class="w-commerce-commercecartquickcheckoutbutton"><svg class="w-commerce-commercequickcheckoutgoogleicon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewbox="0 0 16 16">
+                            <defs>
+                              <polygon id="google-mark-a" points="0 .329 3.494 .329 3.494 7.649 0 7.649"></polygon>
+                              <polygon id="google-mark-c" points=".894 0 13.169 0 13.169 6.443 .894 6.443"></polygon>
+                            </defs>
+                            <g fill="none" fill-rule="evenodd">
+                              <path fill="#4285F4" d="M10.5967,12.0469 L10.5967,14.0649 L13.1167,14.0649 C14.6047,12.6759 15.4577,10.6209 15.4577,8.1779 C15.4577,7.6339 15.4137,7.0889 15.3257,6.5559 L7.8887,6.5559 L7.8887,9.6329 L12.1507,9.6329 C11.9767,10.6119 11.4147,11.4899 10.5967,12.0469"></path>
+                              <path fill="#34A853" d="M7.8887,16 C10.0137,16 11.8107,15.289 13.1147,14.067 C13.1147,14.066 13.1157,14.065 13.1167,14.064 L10.5967,12.047 C10.5877,12.053 10.5807,12.061 10.5727,12.067 C9.8607,12.556 8.9507,12.833 7.8887,12.833 C5.8577,12.833 4.1387,11.457 3.4937,9.605 L0.8747,9.605 L0.8747,11.648 C2.2197,14.319 4.9287,16 7.8887,16"></path>
+                              <g transform="translate(0 4)">
+                                <mask id="google-mark-b" fill="#fff">
+                                  <use xlink:href="#google-mark-a"></use>
+                                </mask>
+                                <path fill="#FBBC04" d="M3.4639,5.5337 C3.1369,4.5477 3.1359,3.4727 3.4609,2.4757 L3.4639,2.4777 C3.4679,2.4657 3.4749,2.4547 3.4789,2.4427 L3.4939,0.3287 L0.8939,0.3287 C0.8799,0.3577 0.8599,0.3827 0.8459,0.4117 C-0.2821,2.6667 -0.2821,5.3337 0.8459,7.5887 L0.8459,7.5997 C0.8549,7.6167 0.8659,7.6317 0.8749,7.6487 L3.4939,5.6057 C3.4849,5.5807 3.4729,5.5587 3.4639,5.5337" mask="url(#google-mark-b)"></path>
+                              </g>
+                              <mask id="google-mark-d" fill="#fff">
+                                <use xlink:href="#google-mark-c"></use>
+                              </mask>
+                              <path fill="#EA4335" d="M0.894,4.3291 L3.478,6.4431 C4.113,4.5611 5.843,3.1671 7.889,3.1671 C9.018,3.1451 10.102,3.5781 10.912,4.3671 L13.169,2.0781 C11.733,0.7231 9.85,-0.0219 7.889,0.0001 C4.941,0.0001 2.245,1.6791 0.894,4.3291" mask="url(#google-mark-d)"></path>
+                            </g>
+                          </svg><svg class="w-commerce-commercequickcheckoutmicrosofticon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16">
+                            <g fill="none" fill-rule="evenodd">
+                              <polygon fill="#F05022" points="7 7 1 7 1 1 7 1"></polygon>
+                              <polygon fill="#7DB902" points="15 7 9 7 9 1 15 1"></polygon>
+                              <polygon fill="#00A4EE" points="7 15 1 15 1 9 7 9"></polygon>
+                              <polygon fill="#FFB700" points="15 15 9 15 9 9 15 9"></polygon>
+                            </g>
+                          </svg>
+                          <div>Pay with browser.</div>
+                        </a>
+                      </div>
+                      <a href="checkout.html" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton checkout-button" data-loading-text="Hang Tight...">Continue to Checkout</a>
+                    </div>
+                  </div>
+                </form>
+                <div class="w-commerce-commercecartemptystate empty-state">
+                  <div>We couldn&#x27;t find any items in your cart.</div>
+                  <div class="button-arrow-wrap">
+                    <a href="catalog.html" class="button w-button">Start an Order</a><img src="images/Drawn-Arrow.svg" alt="" class="arrow-drawn">
+                  </div>
+                </div>
+                <div aria-live="" style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+                  <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-cart_order_min-error="The order minimum was not met. Add more items to your cart to continue." data-w-cart-subscription_error-error="Before you purchase, please use your email invite to verify your address so we can send order updates.">Product is not available in this quantity.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="flow-section">
+    <div class="flow-wrapper">
+      <div style="opacity:0" class="step-1-wrapper">
+        <div id="pop-up-overlay" style="opacity:1" class="w-layout-vflex popup-overlay">
+          <div class="w-layout-vflex popup-content">
+            <div class="heading-h4">You&#x27;ll have 3 credits left.</div>
+            <div class="paragraph grey">Creating an image will consume 1 credit. Are you sure you want to continue?</div>
+            <div class="button-wrapper popup">
+              <a href="#" id="confirm-create-btn" class="confirm-create-btn w-button">Yes, continue</a>
+              <a id="cancel-create-btn" href="#" data-w-id="360d867a-bf21-75a2-2264-5c3bfc074312" class="cancel-create-btn secondary w-button">Cancel</a>
+            </div>
+          </div>
+        </div>
+        <div class="w-layout-vflex top-wrapper">
+          <div class="title-left">
+            <div class="heading-h6 black">1. PROMPT IT</div>
+          </div>
+          <div class="details-right">
+            <div class="credit-pill">
+              <div class="credit-text number">4</div>
+              <div class="credit-text">Credits Left</div>
+            </div>
+          </div>
+        </div>
+        <div id="path-selector" class="path-selector">
+          <div class="w-layout-vflex selector-title-wrap">
+            <h1 class="heading-h1">What will you <span class="brand-span">create</span> today?</h1>
+          </div>
+          <div class="w-layout-vflex step-selector">
+            <a data-path="style-a-pic" data-w-id="a58d79e0-eb14-7f5d-5372-304e8b306028" href="#" class="path-button w-inline-block"><img width="70" height="Auto" alt="Style Pic Icon" src="images/Style-Icon.svg" class="path-image">
+              <div class="heading-h4 center">Style My Pic</div>
+              <div class="path-paragraph">Apply the latest AI Artwork trends to your own photos.</div>
+            </a>
+            <a data-path="meme-remix" data-w-id="58fe8545-d851-fa00-92a0-bb55685d3c19" href="#" class="path-button w-inline-block"><img width="70" src="images/Meme-Icon.svg" alt="Meme Remix Icon" class="path-image">
+              <div class="heading-h4 center">Meme Remix</div>
+              <div class="path-paragraph">Customize the text of a popular meme to wear anywhere.</div>
+            </a>
+            <a data-path="pattern-maker" href="#" class="path-button disabled-path w-inline-block"><img width="70" src="images/Pattern-Icon.svg" alt="Pattern Icon" class="path-image">
+              <div class="heading-h4 center">Pattern Maker</div>
+              <div class="path-paragraph">Make a repeating design to print on any fabric.</div>
+            </a>
+            <a data-path="blank-canvas" href="#" class="path-button disabled-path w-inline-block"><img width="70" src="images/Blank-Icon.svg" alt="Blank Canvas Icon" class="path-image">
+              <div class="heading-h4 center">Blank Canvas</div>
+              <div class="path-paragraph">Write your own prompt to generate an AI Image.</div>
+            </a>
+          </div>
+        </div>
+        <div id="style-a-pic-setup" class="step-subsection">
+          <div class="heading-h3">Style My Pic</div>
+          <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+            <div class="tabs-menu w-tab-menu">
+              <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link w--current">
+                <div class="tab-link-text">Upload your photo</div>
+              </a>
+              <a data-w-tab="Tab 2" class="tab-link-tab-2 w-inline-block w-tab-link">
+                <div class="tab-link-text">Choose a style</div>
+              </a>
+              <a data-w-tab="Tab 3" class="tab-link-tab-3 w-inline-block w-tab-link">
+                <div class="tab-link-text">Tune your prompt</div>
+              </a>
+            </div>
+            <div class="tabs-content w-tab-content">
+              <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active">
+                <div class="w-layout-vflex upper-text">
+                  <p class="paragraph medium">Step description goes here, it&#x27;s very simple and intuitive, just go ahead and do your thing!</p>
+                </div>
+                <div class="step-content">
+                  <div ms-code-file-upload-input="fileToUpload" class="form_upload-div"><img loading="lazy" src="images/upload.png" alt="Upload Icon" class="icon-1x1-medium align-center">
+                    <div class="paragraph">Click or drag to upload your photo</div>
+                  </div>
+                  <div class="lower-text">
+                    <div class="paragraph grey left">Supported formats: PNG, JPG</div>
+                    <div class="paragraph grey right">Maximum size: 25MB</div>
+                  </div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 2" class="tab-pane-tab-2 w-tab-pane">
+                <div class="w-layout-vflex upper-text">
+                  <p class="paragraph medium">Step description goes here, it&#x27;s very simple and intuitive, just go ahead and do your thing!</p>
+                </div>
+                <div class="step-content">
+                  <div class="w-layout-grid grid style">
+                    <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/Hamilton-speedracer-p-500.png 500w, images/Hamilton-speedracer-p-800.png 800w, images/Hamilton-speedracer-p-1080.png 1080w, images/Hamilton-speedracer.png 1536w" alt="Style 11" src="images/Hamilton-speedracer.png" loading="lazy" class="selection-image pattern-style">
+                      <div class="text-overlay">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/lady-robotech-p-500.png 500w, images/lady-robotech-p-800.png 800w, images/lady-robotech.png 1024w" alt="Style 10" src="images/lady-robotech.png" loading="lazy" class="selection-image pattern-style">
+                      <div class="text-overlay">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/friends-styled-p-500.png 500w, images/friends-styled-p-800.png 800w, images/friends-styled-p-1080.png 1080w, images/friends-styled.png 1536w" alt="Style 9" src="images/friends-styled.png" loading="lazy" class="selection-image pattern-style">
+                      <div class="text-overlay">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/mother-son-ghibli-p-500.png 500w, images/mother-son-ghibli-p-800.png 800w, images/mother-son-ghibli-p-1080.png 1080w, images/mother-son-ghibli.png 1536w" alt="Style 6" src="images/mother-son-ghibli.png" loading="lazy" class="selection-image pattern-style">
+                      <div class="text-overlay">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/family-pixar-p-500.png 500w, images/family-pixar-p-800.png 800w, images/family-pixar.png 1024w" alt="Style 8" src="images/family-pixar.png" loading="lazy" class="selection-image pattern-style">
+                      <div class="text-overlay">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/6fa87592-5423-4132-8dc2-3ee9b3fe923d-p-500.png 500w, images/6fa87592-5423-4132-8dc2-3ee9b3fe923d-p-800.png 800w, images/6fa87592-5423-4132-8dc2-3ee9b3fe923d.png 1024w" alt="Style 5" src="images/6fa87592-5423-4132-8dc2-3ee9b3fe923d.png" loading="lazy" class="selection-image pattern-style">
+                      <div class="text-overlay">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/7e661c0f-3c4e-4237-9625-3f8231b9844e-p-500.png 500w, images/7e661c0f-3c4e-4237-9625-3f8231b9844e-p-800.png 800w, images/7e661c0f-3c4e-4237-9625-3f8231b9844e.png 1024w" alt="Style 4" src="images/7e661c0f-3c4e-4237-9625-3f8231b9844e.png" loading="lazy" class="selection-image pattern-style">
+                      <div class="text-overlay">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/c91ed460-da0d-42d0-8b8f-ce109dfab335-p-500.png 500w, images/c91ed460-da0d-42d0-8b8f-ce109dfab335-p-800.png 800w, images/c91ed460-da0d-42d0-8b8f-ce109dfab335.png 1024w" alt="Style 3" src="images/c91ed460-da0d-42d0-8b8f-ce109dfab335.png" loading="lazy" class="selection-image pattern-style">
+                      <div class="text-overlay">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/4ad293b4-5906-47a9-8e88-62e798942ecc-p-500.png 500w, images/4ad293b4-5906-47a9-8e88-62e798942ecc-p-800.png 800w, images/4ad293b4-5906-47a9-8e88-62e798942ecc.png 1024w" alt="Style 1" src="images/4ad293b4-5906-47a9-8e88-62e798942ecc.png" loading="lazy" class="selection-image pattern-style">
+                      <div class="text-overlay">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/62fd71c5-88fd-4e06-8380-aa14de7d9169-p-500.png 500w, images/62fd71c5-88fd-4e06-8380-aa14de7d9169-p-800.png 800w, images/62fd71c5-88fd-4e06-8380-aa14de7d9169.png 1024w" alt="Style 2" src="images/62fd71c5-88fd-4e06-8380-aa14de7d9169.png" loading="lazy" class="selection-image pattern-style">
+                      <div class="text-overlay">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/mother-son-ghibli-p-500.png 500w, images/mother-son-ghibli-p-800.png 800w, images/mother-son-ghibli-p-1080.png 1080w, images/mother-son-ghibli.png 1536w" alt="Style 6" src="images/mother-son-ghibli.png" loading="lazy" class="selection-image pattern-style">
+                      <div class="text-overlay">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/friends-styled-p-500.png 500w, images/friends-styled-p-800.png 800w, images/friends-styled-p-1080.png 1080w, images/friends-styled.png 1536w" alt="Style 9" src="images/friends-styled.png" loading="lazy" class="selection-image pattern-style">
+                      <div class="text-overlay">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 3" class="tab-pane-tab-3 w-tab-pane">
+                <div class="w-layout-vflex upper-text">
+                  <p class="paragraph medium">Step description goes here, it&#x27;s very simple and intuitive, just go ahead and do your thing!</p>
+                </div>
+                <div class="step-content">
+                  <div class="prompt-field">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-layout-vflex tab-nav-wrapper step">
+            <a href="#" class="back-to-paths w-inline-block"><img alt="Arrow Left" src="images/arrow-left.svg" class="arrow">
+              <div class="previous-button">Go Back</div>
+            </a>
+            <a href="#" class="create-image-btn disabled w-button">Create Image</a>
+            <a href="#" class="next-tab-btn w-inline-block">
+              <div class="next-button">Next</div><img alt="Arrow Right" src="images/arrow-right.svg" class="arrow-right">
+            </a>
+          </div>
+        </div>
+        <div id="meme-remix-setup" class="step-subsection">
+          <div class="heading-h3">Meme Remix</div>
+          <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+            <div class="tabs-menu w-tab-menu">
+              <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link w--current">
+                <div class="tab-link-text">Select a meme</div>
+              </a>
+              <a data-w-tab="Tab 2" class="tab-link-tab-2 w-inline-block w-tab-link">
+                <div class="tab-link-text">Change text</div>
+              </a>
+            </div>
+            <div class="tabs-content w-tab-content">
+              <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active">
+                <div class="w-layout-vflex upper-text">
+                  <p class="paragraph medium">Step description goes here, it&#x27;s very simple and intuitive, just go ahead and do your thing!</p>
+                </div>
+                <div class="step-content">
+                  <div class="w-layout-grid grid pattern">
+                    <a id="w-node-ffaf5dc1-4dfd-935d-aaed-1edc7e6126e7-00299fe9" data-w-id="ffaf5dc1-4dfd-935d-aaed-1edc7e6126e7" href="#" class="selection-field w-inline-block"><img sizes="(max-width: 573px) 100vw, 573px" srcset="images/03e66d48607773dd496e0faeb662d45b_fpostersmallwall_texturesquare_product600x600-p-500.jpg 500w, images/fpostersmallwall_texturesquare_product600x600.jpg 573w" alt="Meme 1" src="images/fpostersmallwall_texturesquare_product600x600.jpg" loading="lazy" class="selection-image pattern-style"></a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="(max-width: 524px) 100vw, 524px" srcset="images/9f26f6e5-d18b-48eb-9492-a87d0cd126b8-p-500.jpg 500w, images/9f26f6e5-d18b-48eb-9492-a87d0cd126b8.jpg 524w" alt="Meme 2" src="images/9f26f6e5-d18b-48eb-9492-a87d0cd126b8.jpg" loading="lazy" class="selection-image pattern-style"></a>
+                    <a href="#" class="selection-field w-inline-block"><img loading="lazy" src="images/download-4.jpeg" alt="Meme 3" class="selection-image pattern-style"></a>
+                    <a href="#" class="selection-field w-inline-block"><img loading="lazy" src="images/download.jpeg" alt="Meme 4" class="selection-image pattern-style"></a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="(max-width: 600px) 100vw, 600px" srcset="images/Two-Buttons-p-500.jpg 500w, images/Two-Buttons.jpg 600w" alt="Meme 5" src="images/Two-Buttons.jpg" loading="lazy" class="selection-image pattern-style"></a>
+                    <a href="#" class="selection-field w-inline-block"><img loading="lazy" src="images/download-3.jpeg" alt="Meme 6" class="selection-image pattern-style"></a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="(max-width: 504px) 100vw, 504px" srcset="images/85a8c7d6-c616-4c8e-9a7f-f36d3fb63a8a-p-500.jpg 500w, images/85a8c7d6-c616-4c8e-9a7f-f36d3fb63a8a.jpg 504w" alt="Meme 7" src="images/85a8c7d6-c616-4c8e-9a7f-f36d3fb63a8a.jpg" loading="lazy" class="selection-image pattern-style"></a>
+                    <a href="#" class="selection-field w-inline-block"><img sizes="(max-width: 750px) 100vw, 750px" srcset="images/9uf00h-p-500.jpg 500w, images/9uf00h.jpg 750w" alt="Meme 8" src="images/9uf00h.jpg" loading="lazy" class="selection-image pattern-style"></a>
+                  </div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 2" class="tab-pane-tab-2 w-tab-pane">
+                <div class="w-layout-vflex upper-text">
+                  <p class="paragraph medium">Step description goes here, it&#x27;s very simple and intuitive, just go ahead and do your thing!</p>
+                </div>
+                <div class="step-content spacer">
+                  <div class="input-field">
+                    <div class="field-label">Upper Text</div>
+                    <div class="framed-field">Write something...</div>
+                  </div>
+                  <div class="input-field">
+                    <div class="field-label">Lower Text</div>
+                    <div class="framed-field">Write something...</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-layout-vflex tab-nav-wrapper step">
+            <a href="#" class="back-to-paths w-inline-block"><img alt="Arrow Left" src="images/arrow-left.svg" class="arrow">
+              <div class="previous-button">Go Back</div>
+            </a>
+            <a href="#" class="create-image-btn w-button">Create Image</a>
+            <a href="#" class="next-tab-btn w-inline-block">
+              <div class="next-button">Next</div><img alt="Arrow Right" src="images/arrow-right.svg" class="arrow-right">
+            </a>
+          </div>
+        </div>
+        <div id="pattern-maker-setup" class="step-subsection">
+          <div class="heading-h3">Pattern Maker</div>
+          <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+            <div class="tabs-menu w-tab-menu">
+              <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link w--current">
+                <div class="tab-link-text">Pattern style</div>
+              </a>
+              <a data-w-tab="Tab 2" class="tab-link-tab-2 w-inline-block w-tab-link">
+                <div class="tab-link-text">Color Scheme</div>
+              </a>
+              <a data-w-tab="Tab 3" class="tab-link-tab-3 w-inline-block w-tab-link">
+                <div class="tab-link-text">Layout</div>
+              </a>
+            </div>
+            <div class="tabs-content w-tab-content">
+              <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active">
+                <div class="w-layout-vflex upper-text">
+                  <p class="paragraph medium">Step description goes here, it&#x27;s very simple and intuitive, just go ahead and do your thing!</p>
+                </div>
+                <div class="step-content">
+                  <div class="w-layout-vflex grid-wrapper">
+                    <div class="w-layout-grid grid pattern">
+                      <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/abstract-pattern-flowers-p-500.png 500w, images/abstract-pattern-flowers-p-800.png 800w, images/abstract-pattern-flowers-p-1080.png 1080w, images/abstract-pattern-flowers.png 1171w" alt="Pattern 3" src="images/abstract-pattern-flowers.png" loading="lazy" class="selection-image pattern-style">
+                        <div class="option-title">Floral</div>
+                      </a>
+                      <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/cd60fdaf-43cf-4396-a9f1-ed3fc9e8fb28-p-500.jpg 500w, images/cd60fdaf-43cf-4396-a9f1-ed3fc9e8fb28-p-800.jpg 800w, images/cd60fdaf-43cf-4396-a9f1-ed3fc9e8fb28-p-1080.jpg 1080w, images/cd60fdaf-43cf-4396-a9f1-ed3fc9e8fb28-p-1600.jpg 1600w, images/cd60fdaf-43cf-4396-a9f1-ed3fc9e8fb28.jpg 1920w" alt="Pattern 1" src="images/cd60fdaf-43cf-4396-a9f1-ed3fc9e8fb28.jpg" loading="lazy" class="selection-image pattern-style">
+                        <div class="option-title">Abstract</div>
+                      </a>
+                      <a href="#" class="selection-field w-inline-block"><img sizes="100vw" srcset="images/pattern-p-500.png 500w, images/pattern-p-800.png 800w, images/pattern-p-1080.png 1080w, images/pattern.png 1361w" alt="Pattern 4" src="images/pattern.png" loading="lazy" class="selection-image pattern-style">
+                        <div class="option-title">Animal Print</div>
+                      </a>
+                      <a href="#" class="selection-field w-inline-block"><img loading="lazy" src="images/brown-vector-western-flourish-pattern.jpg" alt="Pattern 1" class="selection-image pattern-style">
+                        <div class="option-title">Vintage</div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="upper-field">
+                    <div class="option-title">Or prompt your own:</div>
+                    <div class="prompt-field">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                  </div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 2" class="tab-pane-tab-2 w-tab-pane">
+                <div class="w-layout-vflex upper-text">
+                  <p class="paragraph medium">Step description goes here, it&#x27;s very simple and intuitive, just go ahead and do your thing!</p>
+                </div>
+                <div class="step-content spacer">
+                  <div class="w-layout-grid grid pattern">
+                    <a href="#" class="selection-field w-inline-block"><img loading="lazy" src="images/Screenshot-2025-05-26-at-2.12.27-PM.png" alt="Color Palette 1" class="selection-image">
+                      <div class="option-title">Earth</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img loading="lazy" src="images/Screenshot-2025-05-26-at-2.12.15-PM.png" alt="Color Palette 2" class="selection-image">
+                      <div class="option-title">Beach Vibes</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img loading="lazy" src="images/Screenshot-2025-05-26-at-2.12.41-PM.png" alt="Color Palette 3" class="selection-image">
+                      <div class="option-title">Forest</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img loading="lazy" src="images/Screenshot-2025-05-26-at-2.12.47-PM.png" alt="Color Palette 6" class="selection-image">
+                      <div class="option-title">Coney Island</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img loading="lazy" src="images/Screenshot-2025-05-26-at-2.12.21-PM.png" alt="Color Palette 5" class="selection-image">
+                      <div class="option-title">Market</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img loading="lazy" src="images/Screenshot-2025-05-26-at-2.12.34-PM.png" alt="Color Palette 4" class="selection-image">
+                      <div class="option-title">Waterfront</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img loading="lazy" src="images/Screenshot-2025-05-26-at-2.12.27-PM.png" alt="Color Palette 1" class="selection-image">
+                      <div class="option-title">Earth</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block"><img loading="lazy" src="images/Screenshot-2025-05-26-at-2.12.15-PM.png" alt="Color Palette 2" class="selection-image">
+                      <div class="option-title">Earth</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 3" class="tab-pane-tab-3 w-tab-pane">
+                <div class="w-layout-vflex upper-text">
+                  <p class="paragraph medium">Step description goes here, it&#x27;s very simple and intuitive, just go ahead and do your thing!</p>
+                </div>
+                <div class="step-content spacer">
+                  <div class="input-field">
+                    <div class="field-label">Upper Text</div>
+                    <div class="framed-field">Write something...</div>
+                  </div>
+                  <div class="input-field">
+                    <div class="field-label">Lower Text</div>
+                    <div class="framed-field">Write something...</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-layout-vflex tab-nav-wrapper step">
+            <a href="#" class="back-to-paths w-inline-block"><img alt="Arrow Left" src="images/arrow-left.svg" class="arrow">
+              <div class="previous-button">Go Back</div>
+            </a>
+            <a href="#" class="create-image-btn w-button">Create Image</a>
+          </div>
+        </div>
+        <div id="blank-canvas-setup" class="step-subsection">
+          <div class="heading-h3">Blank Canvas</div>
+          <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+            <div class="tabs-menu w-tab-menu">
+              <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link w--current">
+                <div class="tab-link-text">Prompt your own</div>
+              </a>
+            </div>
+            <div class="tabs-content w-tab-content">
+              <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active">
+                <div class="upper-field">
+                  <div class="w-layout-vflex upper-text">
+                    <p class="paragraph medium">Step description goes here, it&#x27;s very simple and intuitive, just go ahead and do your thing!</p>
+                  </div>
+                  <div class="prompt-field">Transform the photo into ghibli animation studios style, with soft colors and expresive characters.</div>
+                  <div class="option-title">Or choose from these:</div>
+                </div>
+                <div class="step-content blank">
+                  <div class="w-layout-grid grid blank">
+                    <a href="#" class="selection-field w-inline-block">
+                      <div class="paragraph small">A realistic drawing of a futuristic mechanical horse</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block">
+                      <div class="paragraph small">A colorful abstract pattern with geometric shapes</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block">
+                      <div class="paragraph small">Mountain landscape with sunset and pine trees</div>
+                    </a>
+                    <a href="#" class="selection-field w-inline-block">
+                      <div class="paragraph small">See more ideas...</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-layout-vflex tab-nav-wrapper step">
+            <a href="#" class="back-to-paths w-inline-block"><img alt="Arrow Left" src="images/arrow-left.svg" class="arrow">
+              <div class="previous-button">Go Back</div>
+            </a>
+            <a href="#" class="create-image-btn w-button">Create Image</a>
+          </div>
+        </div>
+        <div id="image-result" class="image-result">
+          <div class="form-title-wrap">
+            <div class="heading-h3">You&#x27;re an artist!</div><img src="images/mother-son-ghibli.png" loading="lazy" sizes="100vw" srcset="images/mother-son-ghibli-p-500.png 500w, images/mother-son-ghibli-p-800.png 800w, images/mother-son-ghibli-p-1080.png 1080w, images/mother-son-ghibli.png 1536w" alt="Style 6" class="created-image">
+            <p class="paragraph grey">Check it out, it&#x27;d look amazing on a mug, t-shirt or cap.<br></p>
+          </div>
+          <div class="w-layout-vflex tab-nav-wrapper step">
+            <a id="back-to-setup-btn" href="#" class="back-to-setup-btn w-inline-block"><img alt="Arrow Left" src="images/arrow-left.svg" class="arrow">
+              <div class="previous-button">Go Back</div>
+            </a>
+            <a id="craft-product-btn" href="craft-it.html" class="craft-product-btn primary w-button">Craft My Product</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="Trending" style="opacity:0" class="content-section">
+    <div class="w-layout-vflex container">
+      <div class="gallery-wrapper">
+        <div class="w-layout-vflex gallery">
+          <div class="heading-h6 purple">Latest trends</div>
+          <div class="collection-list-wrapper creation w-dyn-list">
+            <div id="macy-container" role="list" class="masonry-list w-dyn-items">
+              <div data-w-id="1e42af03-a6d3-57b1-b3f1-1d5ce0b7621a" style="opacity:0" role="listitem" class="collection-item w-dyn-item">
+                <a data-w-id="1e42af03-a6d3-57b1-b3f1-1d5ce0b7621b" href="#" class="gallery-link creation w-inline-block">
+                  <div style="opacity:0;display:none" class="creation-card-button">
+                    <div>Use This Prompt</div>
+                  </div><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="trending-image w-dyn-bind-empty">
+                </a>
+              </div>
+            </div>
+            <div class="w-dyn-empty">
+              <div>No items found.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="w-layout-grid footer-grid">
+        <div id="w-node-_67f7db32-28d2-9f37-8b84-a159dcc6da5a-dcc6da57" class="footer-column"><img src="images/Isologo.svg" width="368" alt="PrintsGPT Iso Logo" class="footer-logo">
+          <p class="paragraph small center">You prompt it, we ship it right to your door!</p>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <div class="footer-detail-left">
+          <div class="legal">Check our <a href="http://www.flowbase.co" target="_blank" class="webflow-link">Privacy Policy</a> and our <a href="http://webflow.com/" target="_blank" class="webflow-link">Terms of Use.</a>
+          </div>
+        </div>
+        <div class="footer-detail-right">
+          <div class="social-icon-wrap">
+            <a href="#" class="social-link w-inline-block"><img src="images/social-tiktok.svg" alt="Tik Tok" class="social-icon"></a>
+            <a href="#" class="social-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5e360a99f4dd53fd793925af/5e362b9c121267b0fabbef18_social-instagram.svg" alt="" class="social-icon"></a>
+            <a href="#" class="social-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5e360a99f4dd53fd793925af/5e362b9c7c077b1740e27d28_social-youtube.svg" alt="" class="social-icon"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6820c4f7d9b8934078f1a9b9" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("App initialized");
+  const pathSelector = document.getElementById("path-selector");
+  const pathButtons = document.querySelectorAll(".path-button");
+  const stepSubsections = document.querySelectorAll(".step-subsection");
+  const imageResult = document.getElementById("image-result");
+  const backToSetupBtn = document.getElementById("back-to-setup-btn");
+  const popup = document.getElementById("pop-up-overlay");
+  const confirmBtn = document.querySelector(".confirm-create-btn");
+  const cancelBtn = document.querySelector(".cancel-create-btn");
+  let currentSetupId = null;
+  // Hide all subsections & final screen initially
+  stepSubsections.forEach(s => (s.style.display = "none"));
+  imageResult.style.display = "none";
+  pathSelector.style.display = "flex";
+  if (popup) popup.style.display = "none";
+  // Path selection logic
+  pathButtons.forEach(btn => {
+    if (btn.classList.contains("disabled-path")) {
+      btn.classList.add("disabled");
+      btn.style.opacity = "0.5";
+      btn.style.pointerEvents = "none";
+      return;
+    }
+    btn.addEventListener("click", () => {
+      const selectedPath = btn.getAttribute("data-path");
+      currentSetupId = `${selectedPath}-setup`;
+      pathSelector.style.display = "none";
+      stepSubsections.forEach(s => {
+        s.style.display = s.id === currentSetupId ? "flex" : "none";
+      });
+      updateCreateButtonState(currentSetupId);
+    });
+  });
+  // Back to path selector or previous tab
+  const backButtons = document.querySelectorAll(".back-to-paths");
+  backButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const setupEl = btn.closest(".step-subsection");
+      const tabLinks = setupEl.querySelectorAll(".w-tab-menu .w-tab-link");
+      let activeIndex = -1;
+      tabLinks.forEach((tab, i) => {
+        if (tab.classList.contains("w--current")) {
+          activeIndex = i;
+        }
+      });
+      if (activeIndex > 0) {
+        tabLinks[activeIndex - 1].click();
+        updateCreateButtonState(setupEl.id);
+      } else {
+        stepSubsections.forEach(s => (s.style.display = "none"));
+        imageResult.style.display = "none";
+        pathSelector.style.display = "flex";
+        currentSetupId = null;
+      }
+    });
+  });
+  // Prevent direct tab click navigation
+  function disableTabClicks() {
+    stepSubsections.forEach(setup => {
+      const tabLinks = setup.querySelectorAll(".w-tab-menu .w-tab-link");
+      tabLinks.forEach(tabBtn => {
+        tabBtn.addEventListener("click", e => {
+          e.preventDefault();
+        });
+      });
+    });
+  }
+  // Create image button logic
+  const createButtons = document.querySelectorAll(".create-image-btn");
+  createButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("disabled")) return;
+      if (popup) popup.style.display = "flex"; // Show popup
+    });
+  });
+  // Popup confirm/cancel buttons
+  if (confirmBtn) {
+    confirmBtn.addEventListener("click", () => {
+      if (popup) popup.style.display = "none";
+      stepSubsections.forEach(s => (s.style.display = "none"));
+      imageResult.style.display = "flex";
+    });
+  }
+  if (cancelBtn) {
+    cancelBtn.addEventListener("click", () => {
+      if (popup) popup.style.display = "none";
+    });
+  }
+  // Back to setup from image result
+  if (backToSetupBtn) {
+    backToSetupBtn.addEventListener("click", () => {
+      imageResult.style.display = "none";
+      if (currentSetupId) {
+        document.getElementById(currentSetupId).style.display = "flex";
+      } else {
+        pathSelector.style.display = "flex";
+      }
+    });
+  }
+  // Update Create button state
+  function updateCreateButtonState(setupId) {
+    const setupEl = document.getElementById(setupId);
+    if (!setupEl) return;
+    const createBtn = setupEl.querySelector(".create-image-btn");
+    const nextBtn = setupEl.querySelector(".next-tab-btn");
+    const tabLinks = setupEl.querySelectorAll(".w-tab-menu .w-tab-link");
+    if (!createBtn || !nextBtn || tabLinks.length === 0) return;
+    let activeIndex = -1;
+    tabLinks.forEach((btn, i) => {
+      if (btn.classList.contains("w--current")) {
+        activeIndex = i;
+      }
+    });
+    const isLastTab = activeIndex === tabLinks.length - 1;
+    createBtn.style.display = "inline-flex";
+    if (isLastTab) {
+      createBtn.classList.remove("disabled");
+      nextBtn.style.display = "none";
+    } else {
+      createBtn.classList.add("disabled");
+      nextBtn.style.display = "inline-flex";
+    }
+    nextBtn.onclick = () => {
+      if (activeIndex < tabLinks.length - 1) {
+        tabLinks[activeIndex + 1].click();
+        setTimeout(() => updateCreateButtonState(setupId), 50);
+      }
+    };
+  }
+  // Setup tab navigation
+  function setupTabNavigation() {
+    stepSubsections.forEach(setup => {
+      const tabLinks = setup.querySelectorAll(".w-tab-menu .w-tab-link");
+      tabLinks.forEach(tabBtn => {
+        tabBtn.addEventListener("click", () => {
+          updateCreateButtonState(setup.id);
+        });
+      });
+    });
+  }
+  setupTabNavigation();
+  disableTabClicks();
+});
+</script>
+</body>
+</html>
