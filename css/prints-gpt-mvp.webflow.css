@@ -1088,7 +1088,7 @@
 
 body {
   color: #333;
-  font-family: Inter;
+  font-family: Lato, sans-serif;
   font-size: 15px;
   line-height: 20px;
 }
@@ -1428,6 +1428,7 @@ strong {
 .legal {
   color: #353448;
   text-align: left;
+  font-family: Lato, sans-serif;
   font-size: 14px;
 }
 
@@ -3577,6 +3578,19 @@ strong {
   font-family: var(--main-text);
   color: var(--slate-grey);
   font-size: 16px;
+}
+
+.field-container {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  border-radius: 7px;
+  flex-flow: column;
+  width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+  font-family: Lato, sans-serif;
+  display: flex;
+  overflow: clip;
 }
 
 @media screen and (max-width: 991px) {
